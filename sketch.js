@@ -82,12 +82,15 @@ function draw() {
 
 function keyPressed(){
 if(keyCode === LEFT_ARROW){
-	helicopterSprite.x = helicopterSprite.x - 12;
-	packageSprite.x = helicopterSprite.x;
+	helicopterSprite.x = helicopterSprite.x - 20;
+	translation={x:-20,y:0} 
+	Matter.Body.translate(packageBody, translation);
 }
 
 if(keyCode === RIGHT_ARROW){
-	helicopterSprite.x = helicopterSprite.x + 12;
+	helicopterSprite.x = helicopterSprite.x + 20;
+	translation={x:+20,y:0} 
+	Matter.Body.translate(packageBody, translation);
 }
 
 if(keyCode === DOWN_ARROW){
